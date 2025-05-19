@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>сбор на деп</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+            background: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-section {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            background: #eee;
+            border-radius: 12px;
+        }
+
+        .donate-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: #1a73e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1.5rem;
+            transition: background 0.3s;
+        }
+
+        .donate-btn:hover {
+            background: #1557b0;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .qr-code {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Сбор на деп</h1>
+        
+        <div class="qr-section">
+            <div class="qr-code"></div>
+            <p>Отсканируйте QR-код для перевода</p>
+        </div>
+
+        <a href="https://t.me/CryptoBot" class="donate-btn" id="cryptoLink">
+            Перейти к оплате через CryptoBot
+        </a>
+    </div>
+
+    <script>
+        // Вставьте свою ссылку вместо example.com
+        document.getElementById('cryptoLink').href = 'http://t.me/send?start=IVpywQoXRBz3';
+
+        // Копирование ссылки по долгому нажатию
+        document.getElementById('cryptoLink').addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            navigator.clipboard.writeText(this.href);
+            alert('Ссылка скопирована в буфер!');
+        });
+    </script>
+</body>
+</html>
